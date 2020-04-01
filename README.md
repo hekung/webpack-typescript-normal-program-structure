@@ -1,5 +1,5 @@
 # webpack-typescript-normal-program-structure
-====
+
 A program structure by webpack,typescript,react
 -----
 
