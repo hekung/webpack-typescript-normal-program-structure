@@ -1,5 +1,6 @@
 # webpack-typescript-normal-program-structure
-A program structure by webpack 
+A program structure by webpack,typescript,react
+=
 
 Note that:
 1.SplitChunksPlugin:The SplitChunksPlugin allows us to extract common dependencies into an existing entry chunk or an entirely new chunk,
