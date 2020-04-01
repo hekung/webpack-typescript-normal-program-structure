@@ -1,3 +1,10 @@
+### A program structure by webpack,typescript,react**
+
+#### Note that:
+
+**some about webpack config**
+
+1. SplitChunksPlugin:The SplitChunksPlugin allows us to extract common dependencies into an existing entry chunk or an entirely new chunk,so used it in webpack.common.js.
 
 2. We can use the 'output.filename' substitutions setting to define the names of our output files. 
      webpack provides a method of templating the filenames using bracketed strings called substitutions. The [contenthash] substitution will add a unique hash based on the content of an asset. When the asset's content changes, [contenthash] will change as well.
@@ -10,7 +17,7 @@
     <br>
          splitChunks: {
          <br>
-               >> cacheGroups: {
+               cacheGroups: {
                <br>
                    	vendor: {
                    <br>
@@ -25,4 +32,6 @@
                }
                <br>
            }
+
+
 
