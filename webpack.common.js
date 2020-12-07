@@ -5,7 +5,7 @@ module.exports = {
     entry: './src/index.js',
     output: {
         filename: '[name].[contenthash].js',
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, 'dist')
     },
     optimization: {
         moduleIds: 'hashed',
@@ -24,9 +24,6 @@ module.exports = {
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin()
     ],
-    resolve: {
-        extensions: ['.tsx', '.ts', '.js'],
-    },
     module: {
         rules: [
             {
@@ -37,9 +34,22 @@ module.exports = {
                 ]
             },
             {
+                test: /\.less$/,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    'less-loader'
+                ]
+            },
+            {
                 test: /\.(png|svg|jpg|gif)$/,
                 use: [
-                    'file-loader'
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 2048,
+                        }
+                    }
                 ]
             },
             {
@@ -60,7 +70,10 @@ module.exports = {
             }
         ]
     },
-    stats: {
-        children: false
-    },
+    resolve: {
+        extensions: ['.tsx', '.ts', '.js'],
+        alias: {
+            '@': path.resolve(__dirname, 'src')
+        },
+    }
 };
